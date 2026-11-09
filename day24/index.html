@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        async function getUsers() {
+            try {
+                const users = await fetch("https://jsonplaceholder.typicode.com/users");
+
+                if (!users.ok) {
+                    throw new Error(users.status)
+                }
+                const data = await users.json();
+
+                // fetch and display only users name
+                printName(data);
+                // fetch one user using their id
+                userUsingId(data);
+                // fetch users and count them
+                console.log(data.length);
+            } catch (error) {
+                console.log(error.message);
+            }
+        }
+        getUsers();
+
+        function printName(data) {
+            data.forEach(element => {
+                console.log(element.name);
+            });
+        }
+
+        function userUsingId(data) {
+            let id = 3;
+            const userOne = data.filter(x => x.id == 3);
+            console.log(userOne);
+        }
+
+    </script>
+</body>
+
+</html>

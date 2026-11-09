@@ -1,0 +1,118 @@
+*{
+   box-sizing: border-box;
+   text-decoration: none;
+   color: black;
+}
+nav{
+    display: flex;
+    justify-content: space-between;
+    margin-left: 3%;
+    margin-right: 3%;
+    position: sticky;
+    top: 0;   
+    background-color: white;          
+}
+.ProfilePic{
+    height: 400px;
+    border-radius: 20px;
+}
+.Logo{
+    height: 50px;
+}
+.Parent1{
+    display: flex;
+    justify-content: space-between;
+    gap: 50px;
+    align-items: center;
+    font-weight: bold;
+    font-size: larger;
+}
+.Parent2{
+    display: flex;
+    justify-content: space-evenly;
+    background-color: rgb(230, 235, 238);
+    padding: 3% 8%;
+}
+.hello{
+    color: white;
+    background-color: #932dfa;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 5px;
+}
+.Parent3{
+    display: flex;
+     flex-direction: column;
+     row-gap: 100px;
+}
+.Parent4{
+  display: flex;
+  gap: 10px;
+}
+.Parent4 div{
+    background-color: white;
+    text-align: center;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+.pages:hover{
+    background-color: rgb(230, 235, 238);
+    padding: 10px 30px;
+    border-radius: 5px;
+    color: #932dfa;
+}
+.pages:active{
+    background-color: #932dfa;
+    color: white;
+}
+.icons{
+    font-size: larger;
+    margin-top: 5%;
+}
+.icons:hover{
+color: #932dfa;
+}
+
+/* about page css */
+
+.container{
+    display: flex;
+    justify-content: space-evenly;
+    padding: 50px;
+    align-items: center;
+      background-color: rgb(230, 235, 238);
+}
+.paragraph{
+    font-size: larger;
+    font-weight:lighter;
+}
+
+/* projects css start */
+
+.Grid-Container{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    padding: 50px;
+}
+.grid-item{
+    border: 1px solid black;
+     height: 500px;
+     border-radius: 8px;
+}
+.GridPic{
+    width: 100%;
+}
+.grid-item:hover{
+    box-shadow: 0px 3px 30px 10px rgb(230, 235, 238);
+}
+.gridboxbtn{
+    padding: 10px 20px;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+.gridboxbtn:hover{
+    color: #932dfa;
+    border: 1px solid #932dfa;
+    border-radius: 5px;
+}

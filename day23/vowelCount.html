@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let str = "fruits";
+
+        let count = 0;
+
+        for (let i = 0; i < str.length; i++) {
+            if (str[i] === "a" || str[i] === "e" || str[i] === "i" || str[i] === "o" || str[i] === "u") {
+                count++;
+            }
+
+        }
+
+        console.log(count);
+
+        let str2 = "aabbcceo";
+        for (let i = 0; i < str2.length; i++) {
+            let count = 0;
+            for (let j = 0; j < str2.length; j++) {
+                if (str2[i] === str2[j]) {
+                    count++;
+                }
+            }
+
+            if (count == 1) {
+                console.log(str2[i])
+                break;
+            }
+        }
+
+        // reverse the sentence
+        let sentence = "hello world";
+
+        let updatedSentence = "";
+
+        for (let i = sentence.length - 1; i >= 0; i--) {
+            updatedSentence += sentence[i];
+        }
+        console.log(updatedSentence);
+
+        // remove the duplicate element from an array
+
+        let arr = [1, 2, 21, 2, 2, 2, 4, 5, 1];
+
+        // using reduce
+        let newarr = arr.reduce((acc, curr) => {
+            if (!acc.includes(curr)) {
+                acc.push(curr);
+            }
+            return acc;
+        }, []);
+        console.log(newarr);
+
+        // solution using filter
+        let newarr2 = arr.filter((curr, index) => {
+            return arr.indexOf(curr) === index;
+        })
+        console.log(newarr2);
+        
+        //   sum of every product price
+        let product = [{ item: "keyboard", price: 1000 }, { item: "mouse", price: 1500 }, { item: "adapter", price: 3000 }];
+
+        let sum = 0;
+
+        product.forEach((ele) => {
+            sum += ele.price
+        })
+
+        console.log(sum);
+
+
+    </script>
+</body>
+
+</html>

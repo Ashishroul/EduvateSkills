@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let str1=" JavaScript ";
+
+        let str2="javascript";
+
+        console.log(str1==str2);
+        console.log(str1===str2);
+
+        console.log(str1.length)
+         console.log(str1);
+
+         console.log(str1.trim())
+
+        console.log(str1[2])
+
+        console.log(str1.charAt(2));
+
+        console.log(str1.at(-3));
+
+        let a="hello";
+
+        let b=[...a];
+          
+        b.forEach((d,c)=>{
+         if(c===1){
+            console.log(d)
+         }
+         });
+
+        console.log("start");
+        setTimeout(()=>{
+            console.log("process");
+        },3000)
+        console.log("end");
+        
+    </script>
+</body>
+</html>

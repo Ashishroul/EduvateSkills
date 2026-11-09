@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        let array=[10,20,10,30,50];
+           
+        // indexOf provide the first index of element
+        console.log(array.indexOf(10));
+
+        console.log(array.lastIndexOf(10));
+        console.log(array.includes(40));
+
+        // find and findIndex methods only provide first match (does not provides multiple values in array like filter)
+        console.log(array.find(x=>x>20));
+        console.log(array.findIndex(x=>x>20));
+
+        let fruits=["apple","banana","guava"]
+
+        array.forEach(element => {
+            console.log(element);
+        });
+
+
+        fruits.forEach((element,index) => {
+            console.log(index, element);
+        });
+
+        let users=[{email:"a@gmail.com",verified:true},{email:"b@gmail.com",verified:true}];
+
+       let available=users.find(x=>x.email==="a@gmail.com");
+
+       console.log(available);
+
+       let employee=[{name:"a",salary:50000},{name:"a",salary:80000}];
+
+       let updatedemployee=employee.map((element)=>{
+
+          return {
+            name:element.name,
+            salary: element.salary+(element.salary*10/100)
+            }
+          
+       });
+       
+       console.log(updatedemployee)
+       let student=[{name:"a",mark:60},{name:"b",mark:70},{name:"c",mark:80}];
+
+       let mark=student.filter(ele=>ele.mark>60);
+
+       console.log(mark);
+    </script>
+</body>
+</html>

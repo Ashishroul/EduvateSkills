@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let fruits = ["apple", "avacado", "berry", "mango"];
+
+        fruits.forEach(element => {
+            console.log(element.length)
+        });
+
+        // find string more than 4 char
+
+        fruits.forEach(element => {
+            if (element.length > 4) {
+                console.log(element);
+            }
+        });
+
+        // print the first char of every string.
+
+        fruits.forEach(element => {
+            console.log(element[0])
+        });
+
+        //print the last char of every string.
+        fruits.forEach(element => {
+            console.log(element[element.length - 1])
+        });
+
+        //find apple in a an array
+
+        let appleInclude = fruits.includes("apple");
+        console.log(appleInclude)
+
+        // count string having letter "a"
+        let StringHavinga = fruits.reduce((acc, curr) => {
+            if (curr.includes("a")) {
+                acc = acc+1;
+            }
+            return acc
+        }, 0)
+
+        console.log(StringHavinga);
+
+        //    find the longest string.
+        let longestString = fruits.reduce((longestStr, curr) => {
+            
+            return longestStr.length> curr.length? longestStr : curr;
+
+        },fruits[0] )
+
+        console.log(longestString)
+
+    </script>
+</body>
+
+</html>

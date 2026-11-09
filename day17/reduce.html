@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let num = [23, 3, 5, 6, 8, 22];
+
+        let sum = num.reduce((acc, curr) => {
+            return acc += curr;
+        }, 0)
+
+        console.log(sum);
+        let employee = [{ name: "ashish", salary: 10000 }, { name: "papan", salary: 15000 }, { name: "ankit", salary: 20000 }, { name: "somu", salary: 15000 }];
+
+        let EmployeeSalary = employee.reduce((acc, curr) => {
+            if (acc[curr.salary]) {
+                acc[curr.salary] = acc[curr.salary] + 1;
+            } else {
+                acc[curr.salary] = 1;
+            }
+            return acc;
+        }, {})
+
+        console.log(EmployeeSalary);
+
+    </script>
+</body>
+
+</html>

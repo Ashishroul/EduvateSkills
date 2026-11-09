@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        let createEmployee= (employee, name, role,experiance) => {
+          employee.name=name;
+          employee.role=role;
+          employee.experiance=experiance;
+        }
+
+        let Employee = new Object();
+
+        createEmployee(Employee, "Ashish", "Software devloper", `5 years`);
+
+        console.log(Employee);
+
+        let Student={
+            name: "Ashish",
+            address:{
+                plot: 482,
+                pin: 751021,
+                city: "BBSR"
+            },
+
+            createId:()=>{
+              Student.name="Papan";
+            }
+        }
+
+        Student.createId();
+
+        console.log(Student.name);
+
+    </script>
+</body>
+
+</html>

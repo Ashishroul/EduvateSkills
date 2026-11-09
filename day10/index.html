@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="name">Ashish</h1>
+    <button onclick="fun()">See The Magic!</button>
+    <script>
+
+      document.getElementById("name").style.backgroundColor="green";
+      function fun(){
+        let el=document.getElementById('name')
+
+           el.style.backgroundColor="blue";
+           el.style.color="white";
+      }
+
+      let name="Ashish";
+      age=25;
+      console.log(`My name is ${name} and My age is ${age}`);
+      
+    </script>
+</body>
+</html>

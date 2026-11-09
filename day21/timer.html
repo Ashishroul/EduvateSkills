@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timer</title>
+</head>
+
+<body style="display: flex; flex-direction: column; align-items: center;">
+    <div style="display: flex; gap: 10px;">
+        <h1>Hrs:<span id="hrs">00</span></h1>
+        <h1>Min:<span id="min">00</span></h1>
+        <h1>Sec:<span id="sec">00</span></h1>
+    </div>
+    <div>
+        <button onclick="start()">Start</button>
+        <button onclick="stop()">Stop</button>
+    </div>
+    <script>
+        let sec = 0;
+        let min = 0;
+        let hrs = 0;
+        let hrsUpdate = document.getElementById("hrs");
+        let minUpdate = document.getElementById("min");
+        let secUpdate = document.getElementById("sec");
+
+
+        let timer;
+
+        function start() {
+            timer = setInterval(() => {
+                sec++;
+                secUpdate.innerText = sec;
+
+                if (sec == 59) {
+                    sec = 0;
+                    min++;
+                    secUpdate.innerText = "00";
+                    minUpdate.innerText = min;
+                    if (min == 59) {
+                        min = 0;
+                        hrs++
+                        minUpdate.innerText = "00";
+                        hrsUpdate.innerText = hrs;
+                        if (hrs == 12) {
+                            hrs = 0;
+                            secUpdate.innerText = "00";
+                            minUpdate.innerText = "00";
+                            hrsUpdate.innerText = "00";
+                        }
+                    }
+                }
+            }, 100)
+        }
+
+        function stop() {
+            clearInterval(timer)
+        }
+        
+    </script>
+</body>
+
+</html>

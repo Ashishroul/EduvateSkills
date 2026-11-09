@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let Student = {
+            name: "Ashish",
+            address: {
+                plot: 482,
+                pin: 751021,
+                landmark: "Near by durga mandap"
+            },
+        }
+
+        let fun = (student) => {
+            return student.address.pin
+        }
+
+        console.log(fun(Student));
+
+        let student = [{
+            name: "Ashish",
+            address: {
+                city: "bbsr",
+                pin: 465559
+            }
+        }, {
+            name: "Ankit",
+            address: {
+                city: "bbsr",
+                pin: 466646
+            }
+        }, {
+            name: "behera",
+            address: {
+                city: "bbsr",
+                pin: 465547
+            }
+        }]
+
+        let pin = (student) => {
+            return student[0].address.pin
+        }
+
+        console.log(pin(student));
+
+    </script>
+</body>
+
+</html>

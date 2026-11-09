@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // find the ven numbers
+        let a = [1, 2, 3, 4, 5];
+       let totaleven=0
+        for (let i = 0; i < a.length; i++) {
+            if (a[i] % 2 == 0) {
+                console.log(a[i]);
+                totaleven+=a[i];
+            }
+        }
+         console.log(totaleven);
+        //    reverse the array
+        for (let i = a.length - 1; i >= 0; i--) {
+            console.log(a[i]);
+        }
+
+        //   find the sum
+        let sum = 0;
+        for (let i = 0; i < a.length; i++) {
+            sum += a[i];
+        }
+        console.log(sum);
+
+
+        // biggest number in array
+        let biggestNum = a[0];
+
+        for (let i = 0; i < a.length; i++) {
+            if (a[i] > biggestNum) {
+                biggestNum = a[i];
+            }
+        }
+        console.log(biggestNum);
+
+        let numberExist=5;
+
+        let numExistOrNot=false;
+
+        for(let i = 0; i < a.length; i++){
+           
+           
+           if(numberExist===a[i]){
+            console.log(`${numberExist} is exist in the array`)
+            numExistOrNot=true;
+           }else{
+            console.log("The num is not exist");
+
+           }
+        }
+        // console.log(numExistOrNot);
+    </script>
+</body>
+
+</html>

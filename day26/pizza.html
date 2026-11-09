@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body style="display: flex; align-items: center; justify-content: center; height: 100vh;">
+    <div style="border-radius: 5%; width: 400px; box-shadow: 0px 0px 10px 0px black;">
+        <div><img style="border-radius: 5%; max-width: 100%;"
+                src="https://upload.wikimedia.org/wikipedia/commons/8/86/Pizza_%281%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original"
+                alt="pizza"></div>
+        <div style="padding:5%;">
+            <h2 style="margin: 0;">Spicy / Hot Mushroom Pizza</h2>
+            <p>Serves a Spicy Mushroom Thin Crust Cheese Pizza layered with mushrooms, onions, capsicum, paprika,
+                tomatoes, jalapenos, and a rich creamy sauce.</p>
+            <div align="center">
+                <fieldset style=" width: 30%; text-align: center;"><button onclick="decreament()">-</button><span
+                        style="margin:10%">0</span><button onclick="increament()">+</button></fieldset>
+                <button
+                    style="color: white; width: 90%; margin: 4%; padding: 4%; border: none; background-color: #ee9c30; border-radius:10px;">Add
+                    to cart</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let countTxt = document.querySelector("span");
+        let count = 0
+        function decreament() {
+            if (count > 0) {
+                count--;
+                countTxt.innerText = count
+            } else {
+                alert("Add some quantity")
+            }
+        }
+        function increament() {
+            count++;
+            countTxt.innerText = count
+        }
+
+    </script>
+</body>
+
+</html>

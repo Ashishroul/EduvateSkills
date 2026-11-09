@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let weather = `{
+            "city": "Bhubaneswar",
+            "country": "India",
+            "temperature": 32,
+            "feels_like": 36,
+            "humidity": 75,
+            "wind_speed": 14,
+            "condition": "Cloudy",
+            "visibility": 8,
+            "is_raining": false,
+
+            "forecast": [
+                {
+                    "day": "Monday",
+                    "temperature": 32,
+                    "condition": "Cloudy",
+                    "rain_chance": 20
+                },
+                {
+                    "day": "Tuesday",
+                    "temperature": 29,
+                    "condition": "Rainy",
+                    "rain_chance": 85
+                },
+                {
+                    "day": "Wednesday",
+                    "temperature": 31,
+                    "condition": "Sunny",
+                    "rain_chance": 10
+                },
+                {
+                    "day": "Thursday",
+                    "temperature": 27,
+                    "condition": "Rainy",
+                    "rain_chance": 90
+                },
+                {
+                    "day": "Friday",
+                    "temperature": 34,
+                    "condition": "Sunny",
+                    "rain_chance": 5
+                }
+            ]
+        }`
+
+        let weatherJS=JSON.parse(weather);
+
+            console.log(`The city name is: ${weatherJS.city}`);
+            console.log(`The country name is: ${weatherJS.country}`);
+            console.log(`The current temp is: ${weatherJS.temperature}`);
+            console.log(`The feels like temp is: ${weatherJS.feels_like}`);
+            console.log(`currently raining: ${weatherJS.is_raining}`);
+
+            // print the names of all five forcast days
+
+            let forcaste=weatherJS.forecast;
+
+            forcaste.forEach((ele)=>{
+               console.log(`name of forcaste day: ${ele.day}`);
+            })
+            // create a new array containing only forcast temp
+
+            let forcaste_temp=forcaste.map(x=>x.temperature);
+
+            console.log(forcaste_temp);
+
+            // find all day when temp below 30 degree celcius & find day with 90% chance of rain &
+            // find all forcaste days when rain chance is greater than 50%
+
+            forcaste.forEach((ele)=>{
+                if(ele.temperature<30 ){
+                    console.log(ele.day);
+                }else if(ele.rain_chance==90){
+                    console.log(`${ele.day} has 90% chance of rain`);
+                }else if (ele.rain_chance>50) {
+                    console.log(`${ele.day} has 50% above chance of rain`);
+                }
+            })
+    
+            //  calculate average accoss all five forcast days of temp.
+           let average=forcaste.reduce((acc,curr)=>{
+                acc+=curr.temperature;
+
+                return acc;
+            },0)
+
+            console.log(average/5);
+            
+    </script>
+</body>
+
+</html>

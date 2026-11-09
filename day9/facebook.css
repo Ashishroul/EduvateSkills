@@ -1,0 +1,49 @@
+* {
+    box-sizing: border-box;
+}
+
+.ParentContainer {
+    display: flex;
+    gap: 20px;
+    margin: 50px;
+    justify-content: center;
+}
+
+.container {
+    box-shadow: 0 2px 5px 0 black;
+    border-radius: 20px;
+    width: 400px;
+}
+
+.child1 {
+    background-color: rgb(64, 113, 244);
+    text-align: center;
+    border-radius: 20px 20px 0 0;
+    height: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.child2 {
+    text-align: center;
+    padding-bottom: 40px;
+}
+
+.ProfilPic {
+    width: 50%;
+    border-radius: 50%;
+}
+
+.logo {
+    width: 5%;
+}
+
+button {
+    padding: 10px 20px;
+    border-radius: 8px;
+    border: none;
+    background-color: rgb(64, 113, 244);
+    margin: 20px;
+    color: white;
+}

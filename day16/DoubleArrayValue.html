@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    let num=[1,2,3,4]
+
+    let num2=num.map(a=>a*2);
+    // console.log(num2);
+
+    num.push(5);
+    console.log(num)
+    num.pop();
+    console.log(num)
+    num.unshift(0);
+    console.log(num)
+    num.shift();
+    console.log(num)
+
+    let fruits=["appple","avacado","berry"];
+
+    let UperFruits=fruits.map(a=>a.toUpperCase());
+    console.log(UperFruits);
+
+    let Student=[{name:"paras",age:25},{name:"ankit",age:21},{name:"saani",age:22}]
+
+    let StudentAge=Student.map(a=>a.age);
+
+    console.log(StudentAge)
+
+    let array=[5,10,1,4,24,13];
+
+    let FilterArray=array.filter(a=>a>10);
+
+    console.log(FilterArray);
+    </script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+*{
+    box-sizing: border-box;
+}
+div{
+    border: 1px solid black;
+    padding: 60px;
+    box-shadow: 2px 2px 20px 0px black;
+    border: none;
+    border-radius: 10px;
+}
+input{
+    width: 100%;
+    padding: 10px;
+    border-radius: 10px;
+}
+button{
+    padding: 10px;
+    background-color: rgb(59, 110, 237);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    width: 100%;
+}
+h1{
+    margin-top: 0;
+}
