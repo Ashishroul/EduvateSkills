@@ -24,6 +24,7 @@ const StudentForm = () => {
   return (
     <div className='border-2 border-[#dbe9f6] w-2/3 h-2/3 overflow-auto bg-[#f5f9fc]'>
       <nav className='h-fit p-5 bg-[#dbe9f6]'>
+        <h1>Ashish</h1>
         <h1 className='font-bold text-lg'>ABC College</h1>
         <p className='text-lg'>Bhubneswar</p>
       </nav>
