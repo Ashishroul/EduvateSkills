@@ -4,7 +4,7 @@ import TodoList from './TodoList';
 const TodoForm = () => {
     const savedData = JSON.parse(localStorage.getItem('works'))
 
-    const [work, setWork] = useState({ task: '', isChecked:null });
+    const [work, setWork] = useState({ task: '', isChecked:"" });
     const [worksArr, setWorksArr] = useState(savedData ? savedData : []);
 
     function handleChange(e) {
