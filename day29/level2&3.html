@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const students = [
+            {
+                id: 1,
+                name: "Rahul",
+                age: 22,
+                isActive: true,
+
+                address: {
+                    city: "Bhubaneswar",
+                    state: "Odisha",
+                    pincode: 751001
+                },
+
+                courses: ["React", "Node.js", "MongoDB"],
+
+                marks: {
+                    javascript: 85,
+                    react: 90,
+                    node: 78
+                },
+
+                projects: [
+                    { id: 101, name: "Portfolio", technology: "React", completed: true },
+                    { id: 102, name: "E-commerce", technology: "MERN", completed: false }
+                ],
+
+                skills: [
+                    { name: "JavaScript", level: "Advanced" },
+                    { name: "React", level: "Intermediate" }
+                ]
+            },
+
+            {
+                id: 2,
+                name: "Amit",
+                age: 24,
+                isActive: false,
+
+                address: {
+                    city: "Delhi",
+                    state: "Delhi",
+                    pincode: 110001
+                },
+
+                courses: ["Java", "Spring Boot", "MySQL"],
+
+                marks: {
+                    javascript: 45,
+                    react: 50,
+                    node: 40
+                },
+
+                projects: [
+                    { id: 103, name: "Banking App", technology: "Java", completed: true },
+                    { id: 104, name: "Employee System", technology: "Spring Boot", completed: true }
+                ],
+
+                skills: [
+                    { name: "Java", level: "Intermediate" },
+                    { name: "MySQL", level: "Beginner" }
+                ]
+            },
+
+            {
+                id: 3,
+                name: "Priya",
+                age: 21,
+                isActive: true,
+
+                address: {
+                    city: "Cuttack",
+                    state: "Odisha",
+                    pincode: 753001
+                },
+
+                courses: ["React", "JavaScript", "TypeScript"],
+
+                marks: {
+                    javascript: 92,
+                    react: 95,
+                    node: 88
+                },
+
+                projects: [
+                    { id: 105, name: "Task Manager", technology: "React", completed: true },
+                    { id: 106, name: "Chat App", technology: "Node.js", completed: true }
+                ],
+
+                skills: [
+                    { name: "React", level: "Advanced" },
+                    { name: "TypeScript", level: "Intermediate" }
+                ]
+            },
+
+            {
+                id: 4,
+                name: "Sneha",
+                age: 23,
+                isActive: true,
+
+                address: {
+                    city: "Pune",
+                    state: "Maharashtra",
+                    pincode: 411001
+                },
+
+                courses: ["Python", "Django", "PostgreSQL"],
+
+                marks: {
+                    javascript: 67,
+                    react: 70,
+                    node: 65
+                },
+
+                projects: [
+                    { id: 107, name: "Blog App", technology: "Django", completed: false },
+                    { id: 108, name: "API Project", technology: "Python", completed: true }
+                ],
+
+                skills: [
+                    { name: "Python", level: "Advanced" },
+                    { name: "Django", level: "Intermediate" }
+                ]
+            },
+
+            {
+                id: 5,
+                name: "Rohit",
+                age: 25,
+                isActive: false,
+
+                address: {
+                    city: "Mumbai",
+                    state: "Maharashtra",
+                    pincode: 400001
+                },
+
+                courses: ["Java", "JavaScript", "MongoDB"],
+
+                marks: {
+                    javascript: 38,
+                    react: 42,
+                    node: 35
+                },
+
+                projects: [
+                    { id: 109, name: "Inventory App", technology: "MERN", completed: false },
+                    { id: 110, name: "Calculator", technology: "JavaScript", completed: true }
+                ],
+
+                skills: [
+                    { name: "JavaScript", level: "Beginner" },
+                    { name: "Java", level: "Advanced" }
+                ]
+            }
+        ];
+
+        // 6. Find students who have completed at least one project.
+        const projectCompletedStudent = students.reduce((acc, curr) => {
+            curr.projects.forEach(element => {
+                if (element.completed == true) {
+                    if (!acc.includes(curr)) {
+                        acc.push(curr)
+                    }
+                }
+            });
+            return acc
+        }, [])
+        console.log("Project completed Students: ", projectCompletedStudent);
+
+        // 7. Find students who have a project using "React".
+        const StudentsWithReactProject = students.reduce((acc, curr) => {
+            curr.projects.forEach((x) => {
+                if (x.technology === "React") {
+                    if (!acc.includes(curr)) {
+                        acc.push(curr)
+                    }
+                }
+            })
+            return acc
+        }, [])
+        console.log("React using project Student: ", StudentsWithReactProject);
+
+        // 8. Get all project names of Rahul.
+        const projectNamesOfRahul = students.reduce((acc, curr) => {
+            if (curr.name === "Rahul") {
+                curr.projects.forEach((x) => {
+                    acc.push(x.name)
+                })
+            }
+            return acc
+        }, [])
+        console.log("all project names of Rahul: ", projectNamesOfRahul);
+
+        // 9. Find students who have "Advanced" level skills.
+        const AdvancedLevelStudents = students.reduce((acc, curr) => {
+            curr.skills.forEach((x) => {
+                if (x.level === "Advanced") {
+                    if (!acc.includes(curr)) {
+                        acc.push(curr)
+                    }
+                }
+            })
+            return acc
+        }, [])
+        console.log("Advanced level skills: ", AdvancedLevelStudents);
+
+        // 10. Find students who have "TypeScript" in their skills.
+        const TypeScriptStudents = students.reduce((acc, curr) => {
+            curr.skills.forEach((x) => {
+                if (x.name === "TypeScript") {
+                    if (!acc.includes(curr)) {
+                        acc.push(curr)
+                    }
+                }
+            })
+            return acc
+        }, [])
+        console.log("TypeScript Students:", TypeScriptStudents);
+
+        // 11. Get the names of students living in Odisha who are active.
+        const OdActiveStudentsName = students.reduce(((acc, curr) => {
+            if (curr.address.state === "Odisha" && curr.isActive) {
+                acc.push(curr.name)
+            }
+            return acc
+        }), [])
+        console.log("names of students living in Odisha & active:", OdActiveStudentsName);
+
+        // 12. Find students whose React marks are above 80 and who have completed a project.
+        const above80nCompletedProjectStudents = students.reduce(((acc, curr) => {
+            if (curr.marks.react > 80) {
+                curr.projects.forEach((x) => {
+                    if (x.completed) {
+                        acc.push(curr)
+                    }
+                })
+            }
+            return acc
+        }), [])
+        console.log("React marks are above 80 and completed a project Students:", above80nCompletedProjectStudents);
+
+        // 13. Get all completed project names from all students.
+        const projectNameOfStudents = students.reduce((acc, curr) => {
+            curr.projects.forEach((x) => {
+                if (x.completed) {
+                    acc.push(x.name)
+                }
+            })
+            return acc
+        }, [])
+        console.log("all completed project names from all students:", projectNameOfStudents);
+
+        // 14. Find students who have both "React" and "Node.js" in their courses.
+        const ReactnNodeStudents = students.reduce(((acc, curr) => {
+            if (curr.courses.includes("React") && curr.courses.includes("Node.js")) {
+                acc.push(curr)
+            }
+            return acc
+        }), [])
+        console.log("React and Node.js in their courses Students:", ReactnNodeStudents)
+
+        // 15. Calculate the average JavaScript marks of all students.
+        const SumOfJavaScriptMarks = students.reduce((acc, curr) => {
+            acc += curr.marks.javascript
+            return acc
+        }, 0)
+        const AvgJavaScriptMarks = SumOfJavaScriptMarks / students.length
+        console.log("average JavaScript marks of students:", AvgJavaScriptMarks)
+    </script>
+</body>
+</html>

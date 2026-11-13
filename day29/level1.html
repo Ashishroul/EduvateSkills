@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    const students = [
+      {
+        id: 1,
+        name: "Rahul",
+        age: 22,
+        isActive: true,
+
+        address: {
+          city: "Bhubaneswar",
+          state: "Odisha",
+          pincode: 751001
+        },
+
+        courses: ["React", "Node.js", "MongoDB"],
+
+        marks: {
+          javascript: 85,
+          react: 90,
+          node: 78
+        },
+
+        projects: [
+          { id: 101, name: "Portfolio", technology: "React", completed: true },
+          { id: 102, name: "E-commerce", technology: "MERN", completed: false }
+        ],
+
+        skills: [
+          { name: "JavaScript", level: "Advanced" },
+          { name: "React", level: "Intermediate" }
+        ]
+      },
+
+      {
+        id: 2,
+        name: "Amit",
+        age: 24,
+        isActive: false,
+
+        address: {
+          city: "Delhi",
+          state: "Delhi",
+          pincode: 110001
+        },
+
+        courses: ["Java", "Spring Boot", "MySQL"],
+
+        marks: {
+          javascript: 45,
+          react: 50,
+          node: 40
+        },
+
+        projects: [
+          { id: 103, name: "Banking App", technology: "Java", completed: true },
+          { id: 104, name: "Employee System", technology: "Spring Boot", completed: true }
+        ],
+
+        skills: [
+          { name: "Java", level: "Intermediate" },
+          { name: "MySQL", level: "Beginner" }
+        ]
+      },
+
+      {
+        id: 3,
+        name: "Priya",
+        age: 21,
+        isActive: true,
+
+        address: {
+          city: "Cuttack",
+          state: "Odisha",
+          pincode: 753001
+        },
+
+        courses: ["React", "JavaScript", "TypeScript"],
+
+        marks: {
+          javascript: 92,
+          react: 95,
+          node: 88
+        },
+
+        projects: [
+          { id: 105, name: "Task Manager", technology: "React", completed: true },
+          { id: 106, name: "Chat App", technology: "Node.js", completed: true }
+        ],
+
+        skills: [
+          { name: "React", level: "Advanced" },
+          { name: "TypeScript", level: "Intermediate" }
+        ]
+      },
+
+      {
+        id: 4,
+        name: "Sneha",
+        age: 23,
+        isActive: true,
+
+        address: {
+          city: "Pune",
+          state: "Maharashtra",
+          pincode: 411001
+        },
+
+        courses: ["Python", "Django", "PostgreSQL"],
+
+        marks: {
+          javascript: 67,
+          react: 70,
+          node: 65
+        },
+
+        projects: [
+          { id: 107, name: "Blog App", technology: "Django", completed: false },
+          { id: 108, name: "API Project", technology: "Python", completed: true }
+        ],
+
+        skills: [
+          { name: "Python", level: "Advanced" },
+          { name: "Django", level: "Intermediate" }
+        ]
+      },
+
+      {
+        id: 5,
+        name: "Rohit",
+        age: 25,
+        isActive: false,
+
+        address: {
+          city: "Mumbai",
+          state: "Maharashtra",
+          pincode: 400001
+        },
+
+        courses: ["Java", "JavaScript", "MongoDB"],
+
+        marks: {
+          javascript: 38,
+          react: 42,
+          node: 35
+        },
+
+        projects: [
+          { id: 109, name: "Inventory App", technology: "MERN", completed: false },
+          { id: 110, name: "Calculator", technology: "JavaScript", completed: true }
+        ],
+
+        skills: [
+          { name: "JavaScript", level: "Beginner" },
+          { name: "Java", level: "Advanced" }
+        ]
+      }
+    ];
+
+    // 1. Get the city of every student.
+    students.forEach((stu) => {
+      console.log(`city: ${stu.address.city}`);
+    })
+
+    // 2. Find students whose address state is "Odisha".
+    const odStudent = students.filter(x => x.address.state === "Odisha")
+    console.table("Students of odisha:", odStudent);
+
+    // 3. Get the React marks of every student.
+     students.forEach((stu) => {
+      console.log(`React Mark: ${stu.marks.react}`);
+    })
+
+    // 4. Find students who have "MongoDB" in their courses.
+    
+    const MDStudent = students.filter(x => x.courses.includes("MongoDB"))
+    console.table("Students have mongoDb in their courses:", MDStudent);
+
+    // 5. Find students whose JavaScript marks are greater than 80.
+    const greater80Students = students.filter(x => x.marks.javascript>80)
+    console.table("Javascript marks above 80:", greater80Students);
+
+  </script>
+</body>
+
+</html>
