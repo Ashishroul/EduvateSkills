@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const obj = {
+            a: 10,
+            b: 20,
+            sum() {
+                return(this.a + this.b);
+            }
+        }
+        
+        // wrong way
+        let res = obj.sum; //it extract the sum function from obj and store it in new varriable
+        console.log(res());  //It invoked as regular function call rather than a sum method of obj;
+
+        // const obj2 = {
+        //     a: 20,
+        //     b: 20,
+        //     // sum() {
+        //     //     return(this.a + this.b);
+        //     // }
+        // }
+        
+        // How to fix
+        res = obj.sum.bind(obj) 
+        console.log(res());
+    </script>
+</body>
+
+</html>

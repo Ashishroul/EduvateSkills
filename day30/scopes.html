@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // global scope(can be access through out the complete code)
+        const a = 10;
+
+        function global() {
+            console.log(a);
+        }
+        global()
+
+        // function/local scope (can be access through out the complete function but cann't be access outside the fun);
+        for (let index = 0; index < 1; index++) {
+            const b = 20
+            if (b) {
+                console.log(b);
+            }
+        }
+
+        // block scope(varrieble declared with let or const inside {} and can only be accessed within that block and its nested blocks(like if/else or loop))
+        function name() {
+            if (condition) {
+                const name = "Ashish"
+                console.log(name);
+            }
+            console.log(name);  //can't be access outside the declared block  
+        }
+        name()
+
+        // lexical scope (Inner function access the varriable from its outer function declared varriable)
+        const city = "Noida"
+        function city() {
+            const city = "Delhi"
+            function inner() {
+                console.log(city); //Output: Delhi
+            }
+            inner()
+        }
+        city()
+
+    </script>
+</body>
+
+</html>
