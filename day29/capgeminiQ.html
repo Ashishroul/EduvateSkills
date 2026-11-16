@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // Group Array items by Property(city)
+        const students = [{ name: "Ashish", city: "delhi" }, { name: "rohit", city: "delhi" }, { name: "amit", city: "noida" }]
+
+        const cityWiseStudent = students.reduce(((acc, curr) => {
+            if (!acc[curr.city]) {
+                acc[curr.city] = []
+            }
+            acc[curr.city].push(curr)
+            return acc
+        }), {})
+        console.log(cityWiseStudent)
+        
+
+        
+    </script>
+</body>
+
+</html>
