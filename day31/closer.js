@@ -1,7 +1,7 @@
 // inner function invokes, even after outer function execution finished
 
 function Outer(){
-    
+
   let balance=10000;
 
   function checkBalance(){
@@ -11,6 +11,7 @@ function Outer(){
   function Withdraw(amount) {
     balance-=amount;
   }
+  
   function Deposit(amount) {
     balance+=amount;
   }
@@ -19,6 +20,7 @@ function Outer(){
 }
 
 const OuterCall=Outer();
+
 OuterCall.checkBalance()
 OuterCall.Withdraw(500)
 OuterCall.checkBalance()
